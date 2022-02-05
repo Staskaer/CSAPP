@@ -2,6 +2,10 @@
  * 第55题：
  * 在你能够访问的不同机器上，使用show_bytes
  * 编译并运行来确定使用机器的字节顺序
+ * 
+ * 第56题：试着用不同的值来运行show_byte
+ * 
+ * 第57题：编写show_short,show_long,show_double的代码
 */
 
 #include <stdio.h>
@@ -56,12 +60,46 @@ void show_pointer(void *x)
     */
 }
 
+void show_short(short x)
+{
+    printf("show_short function, sizeof(short) is %d\n", (int)sizeof(x));
+
+    show_bytes((byte_pointer)&x, sizeof(x));
+    /*
+     * 将short类型来强制转换成char数组并逐位输出
+    */
+}
+
+void show_long(long x)
+{
+    printf("show_long function, sizeof(long) is %d\n", (int)sizeof(x));
+
+    show_bytes((byte_pointer)&x, sizeof(x));
+    /*
+     * 将long类型来强制转换成char数组并逐位输出
+    */
+}
+
+void show_double(double x)
+{
+    printf("show_double function, sizeof(double) is %d\n", (int)sizeof(x));
+
+    show_bytes((byte_pointer)&x, sizeof(x));
+    /*
+     * 将double类型来强制转换成char数组并逐位输出
+    */
+}
+
 int main()
 {
-    int val = 1;
-    show_int(val);
+    short val = 1;
+
+    show_int((int)val);
     show_float((float)val);
     show_pointer((void *)&val);
+    show_short((short)val);
+    show_long((long)val);
+    show_double((double)val);
 
     system("pause");
 
