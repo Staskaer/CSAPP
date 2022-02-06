@@ -59,7 +59,9 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp",
-        "ADT.C": "cpp"
+        "ADT.C": "cpp",
+        "stdio.h": "c",
+        "xutility": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled",
     "MicroPython.executeButton": [
