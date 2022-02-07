@@ -62,7 +62,8 @@
         "ADT.C": "cpp",
         "stdio.h": "c",
         "xutility": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "stdlib.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled",
     "MicroPython.executeButton": [
