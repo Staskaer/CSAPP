@@ -10,7 +10,7 @@
 
 typedef unsigned float_bits;
 
-//标准答案
+//似乎是标准答案
 int float_f2i(float_bits f)
 {
     /*
