@@ -5,6 +5,7 @@ typedef struct
 {
     int x[A][B];
     /*
+    考虑对齐
     176 < 4*A*B <= 184 --->44 < A*B <= 46
     */
     long long y;
