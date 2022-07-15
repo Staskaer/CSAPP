@@ -1,0 +1,18 @@
+# 1 "addvec.c"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "addvec.c"
+int addcnt = 0;
+
+void addvec(int *x, int *y, int *z, int n)
+{
+    int i;
+    addcnt++;
+
+    int xy = 100;
+
+    for (i = 0; i < n; i++)
+    {
+        z[i] = x[i] + y[i];
+    }
+}
