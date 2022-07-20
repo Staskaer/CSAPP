@@ -11,3 +11,5 @@
 4. 使用库函数进行编写，先编译出`main.c`的`.o`文件`main.o`
 
 5. 最后，将其链接起来 `gcc -static -o prog.exe main.o -L. -llibvector`
+
+6. 可以使用`objdump -D .o文件 > 重定向的文件`来查看各个节的内容
