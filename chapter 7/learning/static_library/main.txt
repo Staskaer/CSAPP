@@ -1,0 +1,124 @@
+
+main.o:     file format pe-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <main>:
+   0:	55                   	push   %rbp
+   1:	48 89 e5             	mov    %rsp,%rbp
+   4:	48 83 ec 20          	sub    $0x20,%rsp
+   8:	e8 00 00 00 00       	callq  d <main+0xd>
+   d:	41 b9 02 00 00 00    	mov    $0x2,%r9d
+  13:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 1a <main+0x1a>
+  1a:	49 89 c0             	mov    %rax,%r8
+  1d:	48 8d 15 08 00 00 00 	lea    0x8(%rip),%rdx        # 2c <main+0x2c>
+  24:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 2b <main+0x2b>
+  2b:	48 89 c1             	mov    %rax,%rcx
+  2e:	e8 00 00 00 00       	callq  33 <main+0x33>
+  33:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 3a <main+0x3a>
+  3a:	8b 50 04             	mov    0x4(%rax),%edx
+  3d:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # 44 <main+0x44>
+  44:	8b 00                	mov    (%rax),%eax
+  46:	41 89 d0             	mov    %edx,%r8d
+  49:	89 c2                	mov    %eax,%edx
+  4b:	48 8d 0d 00 00 00 00 	lea    0x0(%rip),%rcx        # 52 <main+0x52>
+  52:	e8 00 00 00 00       	callq  57 <main+0x57>
+  57:	48 8d 0d 0d 00 00 00 	lea    0xd(%rip),%rcx        # 6b <main+0x6b>
+  5e:	e8 00 00 00 00       	callq  63 <main+0x63>
+  63:	b8 00 00 00 00       	mov    $0x0,%eax
+  68:	48 83 c4 20          	add    $0x20,%rsp
+  6c:	5d                   	pop    %rbp
+  6d:	c3                   	retq   
+  6e:	90                   	nop
+  6f:	90                   	nop
+
+Disassembly of section .data:
+
+0000000000000000 <x>:
+   0:	01 00                	add    %eax,(%rax)
+   2:	00 00                	add    %al,(%rax)
+   4:	02 00                	add    (%rax),%al
+	...
+
+0000000000000008 <y>:
+   8:	03 00                	add    (%rax),%eax
+   a:	00 00                	add    %al,(%rax)
+   c:	04 00                	add    $0x0,%al
+	...
+
+Disassembly of section .drectve:
+
+0000000000000000 <.drectve>:
+   0:	20 2d 61 6c 69 67    	and    %ch,0x67696c61(%rip)        # 67696c67 <y+0x67696c5f>
+   6:	6e                   	outsb  %ds:(%rsi),(%dx)
+   7:	63 6f 6d             	movslq 0x6d(%rdi),%ebp
+   a:	6d                   	insl   (%dx),%es:(%rdi)
+   b:	3a 22                	cmp    (%rdx),%ah
+   d:	7a 22                	jp     31 <y+0x29>
+   f:	2c 33                	sub    $0x33,%al
+  11:	00 00                	add    %al,(%rax)
+	...
+
+Disassembly of section .rdata:
+
+0000000000000000 <.rdata>:
+   0:	7a 20                	jp     22 <y+0x1a>
+   2:	3d 20 5b 25 64       	cmp    $0x64255b20,%eax
+   7:	2c 20                	sub    $0x20,%al
+   9:	25 64 5d 00 70       	and    $0x70005d64,%eax
+   e:	61                   	(bad)  
+   f:	75 73                	jne    84 <y+0x7c>
+  11:	65 00 00             	add    %al,%gs:(%rax)
+	...
+
+Disassembly of section .xdata:
+
+0000000000000000 <.xdata>:
+   0:	01 08                	add    %ecx,(%rax)
+   2:	03 05 08 32 04 03    	add    0x3043208(%rip),%eax        # 3043210 <y+0x3043208>
+   8:	01 50 00             	add    %edx,0x0(%rax)
+	...
+
+Disassembly of section .pdata:
+
+0000000000000000 <.pdata>:
+   0:	00 00                	add    %al,(%rax)
+   2:	00 00                	add    %al,(%rax)
+   4:	6e                   	outsb  %ds:(%rsi),(%dx)
+   5:	00 00                	add    %al,(%rax)
+   7:	00 00                	add    %al,(%rax)
+   9:	00 00                	add    %al,(%rax)
+	...
+
+Disassembly of section .rdata$zzz:
+
+0000000000000000 <.rdata$zzz>:
+   0:	47                   	rex.RXB
+   1:	43                   	rex.XB
+   2:	43 3a 20             	rex.XB cmp (%r8),%spl
+   5:	28 78 38             	sub    %bh,0x38(%rax)
+   8:	36 5f                	ss pop %rdi
+   a:	36 34 2d             	ss xor $0x2d,%al
+   d:	70 6f                	jo     7e <y+0x76>
+   f:	73 69                	jae    7a <y+0x72>
+  11:	78 2d                	js     40 <y+0x38>
+  13:	73 65                	jae    7a <y+0x72>
+  15:	68 2d 72 65 76       	pushq  $0x7665722d
+  1a:	30 2c 20             	xor    %ch,(%rax,%riz,1)
+  1d:	42 75 69             	rex.X jne 89 <y+0x81>
+  20:	6c                   	insb   (%dx),%es:(%rdi)
+  21:	74 20                	je     43 <y+0x3b>
+  23:	62                   	(bad)  
+  24:	79 20                	jns    46 <y+0x3e>
+  26:	4d 69 6e 47 57 2d 57 	imul   $0x36572d57,0x47(%r14),%r13
+  2d:	36 
+  2e:	34 20                	xor    $0x20,%al
+  30:	70 72                	jo     a4 <y+0x9c>
+  32:	6f                   	outsl  %ds:(%rsi),(%dx)
+  33:	6a 65                	pushq  $0x65
+  35:	63 74 29 20          	movslq 0x20(%rcx,%rbp,1),%esi
+  39:	38 2e                	cmp    %ch,(%rsi)
+  3b:	31 2e                	xor    %ebp,(%rsi)
+  3d:	30 00                	xor    %al,(%rax)
+	...
