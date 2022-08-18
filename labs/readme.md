@@ -2,3 +2,4 @@
 
 > > - [x] Lab1：datalab-handout
 > > - [x] Lab2：Bomb
+> > - [x] Lab3：shell
