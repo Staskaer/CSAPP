@@ -20,3 +20,4 @@
 > > labs
 > > - [x] lab1:datalab
 > > - [x] lab2:bomb
+> > - [x] Lab3：shell
